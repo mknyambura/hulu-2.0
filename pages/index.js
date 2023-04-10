@@ -9,7 +9,7 @@ import requests from '../utils/requests'
 const inter = Inter({ subsets: ['latin'] })
 
 export default function Home({results}) {
-  // console.log(props)
+  console.log(results)
   return (
     <>
       <Head>
@@ -31,12 +31,12 @@ export default function Home({results}) {
 export async function getServerSideProps(context){
   const genre = context.query.genre;
 
-  const request = await fetch(`https://api.themoviedb.org/3${requests[genre]?.url || requests.fetchTrending.url}`)
+  const request = await fetch(`https://api.themoviedb.org/3${requests[genre]?.url || requests?.fetchTrending.url}`)
   .then(response => response.json());
 
   return {
     props: {
-      results: request.results,
+      results: request?.results,
     },
   };
 }

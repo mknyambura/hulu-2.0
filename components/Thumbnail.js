@@ -1,6 +1,5 @@
 /* eslint-disable react/display-name */
 
-
 import { ThumbUpIcon } from "@heroicons/react/outline"
 import Image from "next/legacy/image"
 import React from 'react'
